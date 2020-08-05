@@ -9,18 +9,37 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'cohama/lexima.vim'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jiangmiao/auto-pairs'
-Plug 'pangloss/vim-javascript'
+Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sleuth'
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
-" Initialize plugin system
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+let g:prettier#quickfix_enabled = 0
+
+autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
 call plug#end()
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Prettier Section
+
+let g:prettier#config#print_width = '80'
+let g:prettier#config#tab_width = '2'
+let g:prettier#autoformat = 0
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#semi = 'true'
+
+" End of Prettier Section
 
 color lucid
 let g:airline_theme='atomic'
