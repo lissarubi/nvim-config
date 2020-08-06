@@ -10,6 +10,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'cohama/lexima.vim'
+Plug 'prettier/vim-prettier'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -48,7 +49,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 let g:prettier#quickfix_enabled = 0
 
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*md,*.vue,*.yaml,*.html PrettierAsync
 
 let g:prettier#config#print_width = '80'
 let g:prettier#config#tab_width = '2'
