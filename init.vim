@@ -10,6 +10,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'cohama/lexima.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -22,6 +24,14 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+"Snippets Section
+
+autocmd FileType js UltiSnipsAddFiletypes javascript-es6
+
+let g:UltiSnipsExpandTrigger="<tab>"
+
+"End Snippets Section
+
 let g:prettier#quickfix_enabled = 0
 
 autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
@@ -31,6 +41,17 @@ call plug#end()
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+"NERDTree Section
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+"End of NERDTree Section
+
 
 " Prettier Section
 
@@ -117,5 +138,3 @@ set statusline+=\ %{LinterStatus()}
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
-
-
