@@ -17,6 +17,7 @@ Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sleuth'
+
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -38,6 +39,10 @@ let g:prettier#config#tab_width = '2'
 let g:prettier#autoformat = 0
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#semi = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#jsx_bracket_same_line = 'true'
 
 " End of Prettier Section
 
@@ -112,3 +117,5 @@ set statusline+=\ %{LinterStatus()}
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
+
+
