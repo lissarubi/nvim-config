@@ -10,8 +10,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'cohama/lexima.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -21,20 +19,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sleuth'
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-"Snippets Section
-
-autocmd FileType js UltiSnipsAddFiletypes javascript-es6
-
-let g:UltiSnipsExpandTrigger="<tab>"
-
-"End Snippets Section
-
-let g:prettier#quickfix_enabled = 0
-
-autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 call plug#end()
 
@@ -52,8 +36,19 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 "End of NERDTree Section
 
+call plug#end()
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Prettier Section
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+let g:prettier#quickfix_enabled = 0
+
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
 let g:prettier#config#print_width = '80'
 let g:prettier#config#tab_width = '2'
