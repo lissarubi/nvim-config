@@ -10,7 +10,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'cohama/lexima.vim'
-Plug 'prettier/vim-prettier'
+Plug 'Yggdroot/indentLine'
+Plug '907th/vim-auto-save'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -21,35 +24,32 @@ Plug 'tpope/vim-sleuth'
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
-call plug#end()
+let g:indentLine_char_list = ['|']
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-"NERDTree Section
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-"End of NERDTree Section
-
-call plug#end()
-
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Prettier Section
+let g:auto_save_silent = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 let g:prettier#quickfix_enabled = 0
 
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*md,*.vue,*.yaml,*.html PrettierAsync
+autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+call plug#end()
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" My maps (binds)
+
+nnoremap <C-w> :wq!<Enter>
+nnoremap <C-q> :qa!<Enter>
+nnoremap <C-s> :let g:auto_save = 1<Enter>
+
+" End My maps (binds)
+
+" Prettier Section
 
 let g:prettier#config#print_width = '80'
 let g:prettier#config#tab_width = '2'
@@ -62,6 +62,23 @@ let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#jsx_bracket_same_line = 'true'
 
 " End of Prettier Section
+
+" Snippets Section
+
+let g:user_emmet_leader_key=','
+
+
+" End of Snippets Section
+
+"NERDTree Section
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+"End of NERDTree Section
 
 color lucid
 let g:airline_theme='atomic'
