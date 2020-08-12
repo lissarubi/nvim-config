@@ -1,30 +1,44 @@
+set hidden
+set noruler
+set inccommand=split
 set number
+set backspace=indent,eol,start
 set termguicolors
 set mouse=a
-set inccommand=split
+set ttyfast
+set noshowmode
+set laststatus=0
+set noshowcmd
+
+command WQ wq
+command Wq wq
+command W w
+command Q q
+command QW wq
+
 call plug#begin()
 
-Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
-Plug 'Yggdroot/indentLine'
 Plug '907th/vim-auto-save'
+Plug 'tpope/vim-eunuch'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sleuth'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-
-let g:indentLine_char_list = ['|']
 
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
@@ -33,7 +47,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 let g:prettier#quickfix_enabled = 0
 
-autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 call plug#end()
 
@@ -43,11 +57,28 @@ set expandtab
 
 " My maps (binds)
 
-nnoremap <C-w> :wq!<Enter>
-nnoremap <C-q> :qa!<Enter>
-nnoremap <C-s> :let g:auto_save = 1<Enter>
+nnoremap <silent> <C-W> :w!<Enter>
+nnoremap <silent> <C-Q> :qa!<Enter>
+nnoremap <C-S> :let g:auto_save = 1<Enter>:echo "Save Mode is enable"<Enter>
+nnoremap <C-l> :!markpdf %<Enter><Enter>
 
+nnoremap <silent> <c-j> :m +1<Enter>
+nnoremap <silent> <c-k> :m -2<Enter>
+inoremap <silent> <c-j> <ESC>:m +1<Enter> i
+inoremap <silent> <c-k> <ESC>:m -2<Enter> i
+vnoremap <silent> <c-j> :m +1<Enter>
+vnoremap <silent> <c-k> :m -2<Enter>
 " End My maps (binds)
+
+" Icons
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+" End Icons
 
 " Prettier Section
 
@@ -70,23 +101,40 @@ let g:user_emmet_leader_key=','
 
 " End of Snippets Section
 
-"NERDTree Section
+" NERDTree Section
 
-autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-"End of NERDTree Section
-
-color lucid
-let g:airline_theme='atomic'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
+
+" End NERDTree Section
+
+" Theme Section
+
+color lucid
+
+" End Theme Section
+
+" Vim Arline Section
+
+nnoremap <C-x> :tabNext<Enter>
+let g:airline_theme='distinguished'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = "%3p%% %l:%c"
+
+" End Vim Arline Section
+
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
@@ -117,10 +165,10 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \}
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -136,10 +184,10 @@ endfunction
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? 'OK' : printf(
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? 'OK' : printf(
         \   '%d⨉ %d⚠ ',
         \   all_non_errors,
         \   all_errors
