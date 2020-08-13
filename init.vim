@@ -1,5 +1,5 @@
-set hidden
 set noruler
+set hidden
 set inccommand=split
 set number
 set backspace=indent,eol,start
@@ -124,7 +124,6 @@ color lucid
 
 " Vim Arline Section
 
-nnoremap <C-x> :tabNext<Enter>
 let g:airline_theme='distinguished'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
