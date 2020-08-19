@@ -5,10 +5,15 @@ set number
 set backspace=indent,eol,start
 set termguicolors
 set mouse=a
+set nobackup
+set nowritebackup
+set noswapfile
 set ttyfast
 set noshowmode
 set laststatus=0
 set noshowcmd
+set clipboard=unnamedplus
+set t_Co=256
 
 command WQ wq
 command Wq wq
@@ -18,15 +23,15 @@ command QW wq
 
 call plug#begin()
 
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'thaerkh/vim-indentguides'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
-Plug 'tpope/vim-eunuch'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'lambdalisue/glyph-palette.vim'
@@ -37,6 +42,10 @@ Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sleuth'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+let g:indentguides_ignorelist = ['markdown']
+let g:indentguides_spacechar = '▏'
+let g:indentguides_tabchar = '▏'
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
@@ -55,19 +64,43 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Nerd Tree Section
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" End Nerd Tree Section
+
 " My maps (binds)
 
-nnoremap <silent> <C-W> :w!<Enter>
-nnoremap <silent> <C-Q> :qa!<Enter>
-nnoremap <C-S> :let g:auto_save = 1<Enter>:echo "Save Mode is enable"<Enter>
-nnoremap <C-l> :!markpdf %<Enter><Enter>
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-W> :w!<CR>
+nnoremap <silent> <C-Q> :qa!<CR>
+nnoremap <C-S> :let g:auto_save = 1<Enter>:echo "Save Mode is enable"<CR>
+nnoremap <C-l> :!markpdf %<CR><CR>
+nnoremap <C-x> :bnext<CR>
+nnoremap <C-i> :bdelete<CR>
 
-nnoremap <silent> <c-j> :m +1<Enter>
-nnoremap <silent> <c-k> :m -2<Enter>
-inoremap <silent> <c-j> <ESC>:m +1<Enter> i
-inoremap <silent> <c-k> <ESC>:m -2<Enter> i
-vnoremap <silent> <c-j> :m +1<Enter>
-vnoremap <silent> <c-k> :m -2<Enter>
+inoremap <C-v> <ESC>"+pa<CR>
+vnoremap <C-c> "+y<CR>
+vnoremap <C-d> "+d<CR>
+
+nnoremap <silent> <c-j> :m +1<CR>
+nnoremap <silent> <c-k> :m -2<CR>
+inoremap <silent> <c-j> <ESC>:m +1<CR> i
+inoremap <silent> <c-k> <ESC>:m -2<CR> i
+vnoremap <silent> <c-j> :m +1<CR>
+vnoremap <silent> <c-k> :m -2<CR>
+
 " End My maps (binds)
 
 " Icons
@@ -101,21 +134,6 @@ let g:user_emmet_leader_key=','
 
 " End of Snippets Section
 
-" NERDTree Section
-
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-
-" End NERDTree Section
-
 " Theme Section
 
 color lucid
@@ -131,13 +149,9 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%3p%% %l:%c"
+let g:airline_section_c = '%-0.10{getcwd()}/%t'
 
 " End Vim Arline Section
-
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " open new split panes to right and below
 set splitright
