@@ -9,9 +9,12 @@ set nobackup
 set nowritebackup
 set noswapfile
 set ttyfast
+set tabstop=2
 set noshowmode
+set expandtab
 set laststatus=0
 set noshowcmd
+set shiftwidth=2
 set clipboard=unnamedplus
 set t_Co=256
 
@@ -40,29 +43,28 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-sleuth'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" IndentGuides Section
 
 let g:indentguides_ignorelist = ['markdown']
 let g:indentguides_spacechar = '▏'
 let g:indentguides_tabchar = '▏'
+
+" End IndentGuides Section
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 let g:prettier#quickfix_enabled = 0
 
-autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.css,*.tsx,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
-
 call plug#end()
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
 
 " Nerd Tree Section
 
@@ -115,6 +117,9 @@ augroup END
 
 " Prettier Section
 
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+let g:prettier#quickfix_auto_focus = 0
 let g:prettier#config#print_width = '80'
 let g:prettier#config#tab_width = '2'
 let g:prettier#autoformat = 0
