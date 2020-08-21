@@ -47,6 +47,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-sleuth'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+call plug#end()
+
 " IndentGuides Section
 
 let g:indentguides_ignorelist = ['markdown']
@@ -57,14 +59,7 @@ let g:indentguides_tabchar = '▏'
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
-let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
-
-
-let g:prettier#quickfix_enabled = 0
-
-call plug#end()
-
 
 " Nerd Tree Section
 
@@ -84,6 +79,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " My maps (binds)
 
+nnoremap q: <nop>
+
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-W> :w!<CR>
 nnoremap <silent> <C-Q> :qa!<CR>
@@ -92,6 +89,8 @@ nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <C-x> :bnext<CR>
 nnoremap <C-i> :bdelete<CR>
 
+let mapleader = "\<Space>"
+nnoremap <Leader>e :PrettierAsync<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 vnoremap <C-c> "+y<CR>
 vnoremap <C-d> "+d<CR>
@@ -117,7 +116,8 @@ augroup END
 
 " Prettier Section
 
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:auto_save_silent = 1
+let g:prettier#quickfix_enabled = 0
 
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#config#print_width = '80'
