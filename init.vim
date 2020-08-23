@@ -102,6 +102,18 @@ inoremap <silent> <c-k> <ESC>:m -2<CR> i
 vnoremap <silent> <c-j> :m +1<CR>
 vnoremap <silent> <c-k> :m -2<CR>
 
+function! NumberToggle()
+    if(&nu == 1)
+        set nu!
+        set rnu
+    else
+        set nornu
+        set nu
+    endif
+endfunction
+
+nnoremap <C-n> :call NumberToggle()<CR>
+
 " End My maps (binds)
 
 " Icons
@@ -129,6 +141,8 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#jsx_bracket_same_line = 'true'
+
+autocmd BufWritePre * :PrettierAsync
 
 " End of Prettier Section
 
@@ -170,7 +184,7 @@ function! OpenTerminal()
   split term://zsh
   resize 10
 endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <c-y> :call OpenTerminal()<CR>
 
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
