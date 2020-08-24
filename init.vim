@@ -26,7 +26,7 @@ command QW wq
 
 call plug#begin()
 
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -84,7 +84,7 @@ nnoremap q: <nop>
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-W> :w!<CR>
 nnoremap <silent> <C-Q> :qa!<CR>
-nnoremap <C-S> :let g:auto_save = 1<Enter>:echo "Save Mode is enable"<CR>
+nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <C-x> :bnext<CR>
 nnoremap <C-i> :bdelete<CR>
@@ -141,8 +141,6 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#jsx_bracket_same_line = 'true'
-
-autocmd BufWritePre * :PrettierAsync
 
 " End of Prettier Section
 
