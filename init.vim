@@ -81,13 +81,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 nnoremap q: <nop>
 
-nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <C-W> :w!<CR>
 nnoremap <silent> <C-Q> :qa!<CR>
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <C-x> :bnext<CR>
 nnoremap <C-i> :bdelete<CR>
+
+autocmd vimEnter *.cpp map <F6> :w <CR> :!clear ; g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi <CR>
 
 let mapleader = "\<Space>"
 nnoremap <Leader>e :PrettierAsync<CR>
