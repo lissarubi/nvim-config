@@ -38,7 +38,7 @@ Plug '907th/vim-auto-save'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'lambdalisue/glyph-palette.vim'
-Plug 'cseelus/vim-colors-lucid'
+Plug 'edersonferreira/dalton-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
@@ -155,7 +155,7 @@ let g:user_emmet_leader_key=','
 
 " Theme Section
 
-color lucid
+color dalton
 
 " End Theme Section
 
