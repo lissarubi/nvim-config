@@ -41,6 +41,7 @@ Plug 'lambdalisue/glyph-palette.vim'
 Plug 'edersonferreira/dalton-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
