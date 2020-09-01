@@ -49,6 +49,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+" Vim Polyglot Section
+
+let g:polyglot_disabled = ['markdown']
+
+" End Vim Polyglot Section
+
 " IndentGuides Section
 
 let g:indentguides_ignorelist = ['markdown']
@@ -159,9 +165,9 @@ color dalton
 
 " End Theme Section
 
-" Vim Arline Section
+" Vim Airline Section
 
-let g:airline_theme='distinguished'
+let g:airline_theme='daltondark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
@@ -170,7 +176,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%3p%% %l:%c"
 let g:airline_section_c = '%-0.10{getcwd()}/%t'
 
-" End Vim Arline Section
+" End Vim Airline Section
 
 " open new split panes to right and below
 set splitright
