@@ -176,7 +176,7 @@ color dalton
 
 " Vim Airline Section
 
-let g:airline_theme='daltondark'
+let g:airline_theme='dalton'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
