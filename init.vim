@@ -46,6 +46,10 @@ Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-projectionist'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -64,9 +68,7 @@ let g:indentguides_tabchar = '▏'
 
 " End IndentGuides Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls']
 
 " Nerd Tree Section
 
@@ -93,8 +95,8 @@ nnoremap <silent> <C-W> :w!<CR>
 nnoremap <silent> <C-Q> :qa!<CR>
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-l> :!markpdf %<CR><CR>
-nnoremap <C-x> :bnext<CR>
-nnoremap <C-i> :bdelete<CR>
+nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
+nnoremap <F2> :bnext<CR>:echom '->'<CR>
 
 autocmd vimEnter *.cpp map <F6> :w <CR> :!g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi<CR>
 
