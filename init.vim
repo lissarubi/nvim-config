@@ -2,12 +2,14 @@ set noruler
 set hidden
 set inccommand=split
 set number
+set autoread
 set backspace=indent,eol,start
 set termguicolors
 set mouse=a
 set nobackup
 set nowritebackup
 set noswapfile
+set encoding=UTF-8
 set ttyfast
 set tabstop=2
 set noshowmode
@@ -60,6 +62,12 @@ let g:polyglot_disabled = ['markdown']
 
 " End Vim Polyglot Section
 
+" Open images with vim section
+
+au BufRead *.png,*.jpg,*.jpeg,*webp exe "!sxiv %" | :NERDTreeToggle | :NERDTreeToggle
+
+" End Open images with vim
+
 " IndentGuides Section
 
 let g:indentguides_ignorelist = ['markdown']
@@ -97,6 +105,7 @@ nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
+nnoremap <C-i> :bd<CR>
 
 autocmd vimEnter *.cpp map <F6> :w <CR> :!g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi<CR>
 
@@ -107,6 +116,8 @@ autocmd vimEnter *.rb map <F6> :w <CR> :!ruby %<CR>
 autocmd vimEnter *.php map <F6> :w <CR> :!php %<CR>
 
 autocmd vimEnter *.sh map <F6> :w <CR> :!sh %<CR>
+
+autocmd fileType php nnoremap <Leader>e :!prettier % --write<CR><CR> :e<CR>
 
 let mapleader = "\<Space>"
 nnoremap <Leader>e :PrettierAsync<CR>
