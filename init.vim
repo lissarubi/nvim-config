@@ -26,6 +26,12 @@ command W w
 command Q q
 command QW wq
 
+" Vim Polyglot Section
+
+let g:polyglot_disabled = ['markdown']
+
+" End Vim Polyglot Section
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -56,17 +62,27 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-" Vim Polyglot Section
-
-let g:polyglot_disabled = ['markdown']
-
-" End Vim Polyglot Section
-
 " Open images with vim section
 
 au BufRead *.png,*.jpg,*.jpeg,*webp exe "!sxiv %" | :NERDTreeToggle | :NERDTreeToggle
 
 " End Open images with vim
+
+" Snippets Section
+
+imap <C-x> <Plug>(coc-snippets-expand)
+
+vmap <C-a> <Plug>(coc-snippets-select)
+
+let g:coc_snippet_next = 'c-a'
+
+let g:coc_snippet_prev = '<F9>'
+
+imap <C-a> <Plug>(coc-snippets-expand-jump)
+
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+" End Snippets Section
 
 " IndentGuides Section
 
@@ -76,7 +92,15 @@ let g:indentguides_tabchar = '▏'
 
 " End IndentGuides Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls']
+" Coc Section
+
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls', 'coc-snippets']
+
+" End Coc Section
+
+" Snippets Section
+
+" End Snippets Section
 
 " Nerd Tree Section
 

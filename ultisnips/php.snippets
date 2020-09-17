@@ -1,0 +1,62 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet if "if" b
+if (${1}){
+${2}
+}
+endsnippet
+
+snippet for "for" b
+for (${1}){
+${2}
+}
+endsnippet
+
+snippet while "while" b
+while (${1}){
+${2}
+}
+endsnippet
+
+snippet function "function" b
+function ${1}(${2}){
+${3}
+}
+endsnippet
+
+snippet pbf "public function" b
+public function ${1}(${2})
+{
+${3}
+}
+endsnippet
+
+snippet prf "private function" b
+private function ${1}(${2})
+{
+${3}
+}
+endsnippet
