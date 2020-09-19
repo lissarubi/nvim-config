@@ -26,7 +26,7 @@ command W w
 command Q q
 command QW wq
 
-" Vim Polyglot Section
+" Vim Polyglt Section
 
 let g:polyglot_disabled = ['markdown']
 
@@ -45,8 +45,10 @@ Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
-Plug 'lambdalisue/glyph-palette.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edersonferreira/dalton-vim'
+Plug 'edersonferreira/open.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -61,12 +63,6 @@ Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
-" Open images with vim section
-
-au BufRead *.png,*.jpg,*.jpeg,*webp exe "!sxiv %" | :NERDTreeToggle | :NERDTreeToggle
-
-" End Open images with vim
 
 " Snippets Section
 
@@ -83,6 +79,15 @@ imap <C-a> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " End Snippets Section
+
+" Open.vim Section
+
+let g:open#image = 'sxiv'
+let g:open#pdf = 'zathura'
+let g:open#video = 'celluloid'
+let g:open#audio = 'celluloid'
+
+"End Open.vim Section
 
 " IndentGuides Section
 
@@ -123,8 +128,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap q: <nop>
 
 nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
-nnoremap <silent> <C-W> :w!<CR>
-nnoremap <silent> <C-Q> :qa!<CR>
+nnoremap <C-w> :w!<CR>
+nnoremap <C-q> :qa<CR>
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
@@ -172,11 +177,11 @@ nnoremap <C-n> :call NumberToggle()<CR>
 
 " Icons
 
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
-augroup END
+" augroup my-glyph-palette
+"   autocmd! *
+"   autocmd FileType fern call glyph_palette#apply()
+"   autocmd FileType nerdtree,startify call glyph_palette#apply()
+" augroup END
 
 " End Icons
 
