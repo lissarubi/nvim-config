@@ -18,6 +18,7 @@ set laststatus=0
 set noshowcmd
 set shiftwidth=2
 set clipboard=unnamedplus
+set nowrap
 set t_Co=256
 
 command WQ wq
@@ -43,21 +44,19 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-commentary'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
+Plug 'edersonferreira/markdown-preview.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -88,6 +87,12 @@ let g:open#video = 'celluloid'
 let g:open#audio = 'celluloid'
 
 "End Open.vim Section
+
+" Markdown Preview Section
+"
+let g:markdownpreview#browser = "firefox"
+
+" End Markdown Preview Section
 
 " IndentGuides Section
 
@@ -131,7 +136,6 @@ nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-S> :AutoSaveToggle<CR>
-nnoremap <C-l> :!markpdf %<CR><CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
 nnoremap <C-i> :bd<CR>
@@ -145,8 +149,6 @@ autocmd vimEnter *.rb map <F6> :w <CR> :!ruby %<CR>
 autocmd vimEnter *.php map <F6> :w <CR> :!php %<CR>
 
 autocmd vimEnter *.sh map <F6> :w <CR> :!sh %<CR>
-
-autocmd fileType php nnoremap <Leader>e :!prettier % --write<CR><CR> :e<CR>
 
 let mapleader = "\<Space>"
 nnoremap <Leader>e :PrettierAsync<CR>
@@ -203,13 +205,6 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 
 " End of Prettier Section
 
-" Snippets Section
-
-let g:user_emmet_leader_key=','
-
-
-" End of Snippets Section
-
 " Theme Section
 
 color dalton
@@ -241,7 +236,7 @@ function! OpenTerminal()
   split term://zsh
   resize 10
 endfunction
-nnoremap <c-y> :call OpenTerminal()<CR>
+nnoremap <C-l> :call OpenTerminal()<CR>
 
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
