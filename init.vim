@@ -57,6 +57,7 @@ Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -90,7 +91,7 @@ let g:open#audio = 'celluloid'
 
 " Markdown Preview Section
 "
-let g:markdownpreview#browser = "firefox"
+let g:markdownpreview#browser = 'firefox'
 
 " End Markdown Preview Section
 
@@ -104,7 +105,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls', 'coc-snippets']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls', 'coc-snippets', 'coc-solargraph']
 
 " End Coc Section
 
