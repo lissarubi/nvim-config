@@ -18,7 +18,6 @@ set laststatus=0
 set noshowcmd
 set shiftwidth=2
 set clipboard=unnamedplus
-set nowrap
 set t_Co=256
 
 command WQ wq
@@ -50,6 +49,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/markdown-preview.vim'
+Plug 'edersonferreira/request.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
