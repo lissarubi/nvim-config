@@ -43,6 +43,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
+Plug 'sbdchd/neoformat'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -54,7 +55,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -152,7 +152,7 @@ autocmd vimEnter *.php map <F6> :w <CR> :!php %<CR>
 autocmd vimEnter *.sh map <F6> :w <CR> :!sh %<CR>
 
 let mapleader = "\<Space>"
-nnoremap <Leader>e :PrettierAsync<CR>
+nnoremap <Leader>e :Neoformat<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 vnoremap <C-c> "+y<CR>
 vnoremap <C-d> "+d<CR>
@@ -187,24 +187,6 @@ nnoremap <C-n> :call NumberToggle()<CR>
 " augroup END
 
 " End Icons
-
-" Prettier Section
-
-let g:auto_save_silent = 1
-let g:prettier#quickfix_enabled = 0
-
-let g:prettier#quickfix_auto_focus = 0
-let g:prettier#config#print_width = '80'
-let g:prettier#config#tab_width = '2'
-let g:prettier#autoformat = 0
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#jsx_bracket_same_line = 'true'
-
-" End of Prettier Section
 
 " Theme Section
 
