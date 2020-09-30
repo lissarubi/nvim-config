@@ -44,7 +44,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
-Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -140,6 +140,7 @@ nnoremap <F6> :TagbarToggle<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <Leader>d :bw<CR>
+nmap <Leader>e <Plug>(Prettier)
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
@@ -154,7 +155,6 @@ autocmd vimEnter *.php map <F7> :w <CR> :!php %<CR>
 
 autocmd vimEnter *.sh map <F7> :w <CR> :!sh %<CR>
 
-nnoremap <Leader>e :Neoformat<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 vnoremap <C-c> "+y<CR>
 vnoremap <C-d> "+d<CR>
@@ -180,21 +180,29 @@ nnoremap <C-n> :call NumberToggle()<CR>
 
 " End My maps (binds)
 
-" Icons
-
-" augroup my-glyph-palette
-"   autocmd! *
-"   autocmd FileType fern call glyph_palette#apply()
-"   autocmd FileType nerdtree,startify call glyph_palette#apply()
-" augroup END
-
-" End Icons
-
 " Theme Section
 
 color dalton
 
 " End Theme Section
+
+" Prettier Section
+
+let g:auto_save_silent = 1
+let g:prettier#quickfix_enabled = 0
+let g:prettier#exec_cmd_path = "/home/ederson/.asdf/shims/prettier"
+let g:prettier#quickfix_auto_focus = 0
+let g:prettier#config#print_width = '80'
+let g:prettier#config#tab_width = '2'
+let g:prettier#autoformat = 0
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#jsx_bracket_same_line = 'true'
+
+" End of Prettier Section
 
 " Vim Airline Section
 
