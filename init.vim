@@ -35,6 +35,7 @@ let g:polyglot_disabled = ['markdown']
 call plug#begin()
 
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -105,7 +106,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls', 'coc-snippets', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-phpls', 'coc-snippets', 'coc-solargraph', 'coc-vetur']
 
 " End Coc Section
 
@@ -130,28 +131,29 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " End Nerd Tree Section
 
 " My maps (binds)
+let mapleader = "\<Space>"
 
 nnoremap q: <nop>
 
 nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
+nnoremap <F6> :TagbarToggle<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-q> :qa<CR>
+nnoremap <Leader>d :bw<CR>
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
-nnoremap <C-i> :bd<CR>
 
-autocmd vimEnter *.cpp map <F6> :w <CR> :!g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi<CR>
+autocmd vimEnter *.cpp map <F7> :w <CR> :!g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi<CR>
 
-autocmd vimEnter *.js map <F6> :w <CR> :!node %<CR>
+autocmd vimEnter *.js map <F7> :w <CR> :!node %<CR>
 
-autocmd vimEnter *.rb map <F6> :w <CR> :!ruby %<CR>
+autocmd vimEnter *.rb map <F7> :w <CR> :!ruby %<CR>
 
-autocmd vimEnter *.php map <F6> :w <CR> :!php %<CR>
+autocmd vimEnter *.php map <F7> :w <CR> :!php %<CR>
 
-autocmd vimEnter *.sh map <F6> :w <CR> :!sh %<CR>
+autocmd vimEnter *.sh map <F7> :w <CR> :!sh %<CR>
 
-let mapleader = "\<Space>"
 nnoremap <Leader>e :Neoformat<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 vnoremap <C-c> "+y<CR>
@@ -203,7 +205,6 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%3p%% %l:%c"
-let g:airline_section_c = '%-0.10{getcwd()}/%t'
 
 " End Vim Airline Section
 
