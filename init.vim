@@ -41,6 +41,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'sheerun/vim-polyglot'
+Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
@@ -58,8 +59,6 @@ Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
