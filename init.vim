@@ -41,6 +41,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'sheerun/vim-polyglot'
+Plug 'wakatime/vim-wakatime'
 Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
