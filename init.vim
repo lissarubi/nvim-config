@@ -53,14 +53,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/markdown-preview.vim'
-Plug 'edersonferreira/request.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-fugitive'
 Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -140,7 +137,8 @@ nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-q> :qa<CR>
-nnoremap <Leader>d :bw<CR>
+nnoremap db :bw<CR>
+nnoremap cr :CocRestart<CR><CR>
 nmap <Leader>e <Plug>(Prettier)
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
