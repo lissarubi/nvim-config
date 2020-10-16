@@ -104,7 +104,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank']
 
 " End Coc Section
 
@@ -143,6 +143,7 @@ nmap <Leader>e <Plug>(Prettier)
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
+nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
