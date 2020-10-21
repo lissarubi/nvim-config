@@ -52,7 +52,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
-Plug 'edersonferreira/markdown-preview.vim'
+Plug 'npxbr/glow.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gko/vim-coloresque'
@@ -87,12 +87,6 @@ let g:open#video = 'celluloid'
 let g:open#audio = 'celluloid'
 
 "End Open.vim Section
-
-" Markdown Preview Section
-"
-let g:markdownpreview#browser = 'firefox'
-
-" End Markdown Preview Section
 
 " IndentGuides Section
 
@@ -144,6 +138,8 @@ nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
 nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
+
+nnoremap <leader>m :Glow<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
