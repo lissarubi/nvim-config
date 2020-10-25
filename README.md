@@ -22,10 +22,6 @@ Visual indent lines for Vim.
 
 Enable support for a lot of languages.
 
-## Targets.vim
-
-Enable smart moviments in Vim.
-
 ## Vim Gitgutter
 
 Show added lines, removed lines and not changed lines in Vim Statusbar.
