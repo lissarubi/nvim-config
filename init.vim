@@ -97,7 +97,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-go']
 
 " End Coc Section
 

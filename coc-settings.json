@@ -7,5 +7,8 @@
   "emmet.excludeLanguages": [],
   "yank.highlight.duration": 0,
   "yank.list.maxsize": 20,
-  "yank.enableCompletion": false
+  "yank.enableCompletion": false,
+  "go.goplsOptions": {
+    "completeUnimported": true
+  }
 }
