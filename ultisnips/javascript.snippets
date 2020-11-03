@@ -1,52 +1,283 @@
-# A valid snippet should starts with:
-#
-#		snippet trigger_word [ "description" [ options ] ]
-#
-# and end with:
-#
-#		endsnippet
-#
-# Snippet options:
-#
-#		b - Beginning of line.
-#		i - In-word expansion.
-#		w - Word boundary.
-#		r - Regular expression
-#		e - Custom context snippet
-#		A - Snippet will be triggered automatically, when condition matches.
-#
-# Basic example:
-#
-#		snippet emitter "emitter properties" b
-#		private readonly ${1} = new Emitter<$2>()
-#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
-#		endsnippet
-#
-# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-snippet cl "console.log" b
-console.log(${1})
+############# MISC
+snippet for "for" i
+for ($1) {
+  $2
+}$3
 endsnippet
 
-snippet if "if" b
-if (${1}){
-${2}
+snippet c "curly braces with identation" i
+{
+  $1
 }
 endsnippet
 
-snippet for "for" b
-for (${1}){
-${2}
-}
+snippet fn "named function" i
+function $1($2) {
+  $3
+}$4
 endsnippet
 
-snippet while "while" b
-while (${1}){
-${2}
-}
+snippet ff "anonymous function" i
+function($1) {
+  $2
+}$3
 endsnippet
 
-snippet function "function" b
-function ${1}(${2}){
-${3}
-}
+snippet af "arrow function" i
+($1) => {
+  $2
+}$3
+endsnippet
+
+snippet fa "one line arrow function" i
+($1) => $2
+endsnippet
+
+snippet cl "console.log(...)" i
+console.log($1)
+endsnippet
+
+snippet clj "JSON.stringify formatted" i
+console.log(JSON.stringify($1, null, 2))
+endsnippet
+
+snippet if "if statement" i
+if ($1) {
+  $2
+}$3
+endsnippet
+
+snippet el "else statement" i
+else {
+  $1
+}$2
+endsnippet
+
+snippet iife "Immediately-invoked function expression"
+(function() {
+  'use strict';
+
+  $1
+})();
+endsnippet
+
+############# Node.js
+snippet re "require" b
+const `!p
+def formatVariableName(path):
+  if path == 'react/addons':
+    return 'React'
+
+  lastPart = path.split('/')[-1]
+
+  if lastPart == 'lodash':
+    return '_'
+  elif lastPart == 'jquery':
+    return '$'
+  else:
+    return re.sub(r'[_\-]', '', lastPart.title())
+
+snip.rv = formatVariableName(t[1])
+` = require('${1}')$0
+endsnippet
+
+snippet me "module.exports" b
+module.exports = $0
+endsnippet
+
+snippet ee "exports"
+exports = $0
+endsnippet
+
+snippet rr "just require"
+require('$1')
+endsnippet
+
+snippet vr "ES5 require"
+var $1 = require('$1')
+endsnippet
+
+############# JSDoc
+snippet cm
+/**
+ * ${0:${VISUAL}}
+ */
+endsnippet
+
+snippet pr "@param {...}"
+@param {${2:type}} ${1:name} - ${3:description}
+endsnippet
+
+snippet rt "@return {...}"
+@return {${1:type}} - ${2:description}
+endsnippet
+
+snippet ct "@constructor"
+@constructor
+endsnippet
+
+############# Tests
+##### jest
+snippet t "add jest test" i
+test('$1', () => {
+  $2
+})
+endsnippet
+
+##### end jest
+
+snippet ds "describe a test suite" b
+describe('#$1', function() {
+  $2
+})
+endsnippet
+
+snippet it "describe a test" b
+it('Should $1', function() {
+  $2
+})
+endsnippet
+
+snippet ae "afterEach" b
+afterEach(function($1) {
+  $2
+})
+endsnippet
+
+snippet be "beforeEach" b
+beforeEach(function($1) {
+  $2
+})
+endsnippet
+
+snippet ex "expect" b
+expect($1).$2
+endsnippet
+
+############# ES6
+snippet im "import" b
+import `!p
+def formatVariableName(path):
+  if path == 'react':
+    return 'React'
+
+  lastPart = path.split('/')[-1]
+  if lastPart == 'lodash':
+    return '_'
+  elif lastPart == 'jquery':
+    return '$'
+  else:
+    return re.sub(r'[_\-]', '', lastPart.title())
+snip.rv = formatVariableName(t[1])
+` from '${1}'$0
+endsnippet
+
+snippet ed "export default"
+export default $1
+endsnippet
+
+############# Angular 1.x
+snippet ng "angular structure" b
+(function() {
+
+  'use strict';
+
+  angular
+    .module('$1')
+    .$2('$3', $3);
+
+  $3.$inject = [];
+
+  function $3() {
+    var vm = this;$4
+
+    ///////////// Public Properties
+
+    ///////////// Private Properties
+
+    ///////////// Public Methods
+
+    ///////////// Private Methods
+
+    ///////////// Events
+
+    ///////////// Bootstrap
+
+    ///////////// Function Declarations
+  }
+})();
+endsnippet
+
+snippet ngm "angular module" b
+(function() {
+  
+  'use strict';
+
+  angular
+    .module('$1', [$2]);
+})();
+endsnippet
+
+snippet ngd "angular directive" b
+(function() {
+
+  'use strict';
+
+  angular
+    .module('$1')
+    .directive('$3', $3);
+
+  $3.$inject = [];
+
+  function $3($4) {
+    return {
+      $5
+    };
+  }
+
+})();
+endsnippet
+
+snippet ngdc "angular directive using controller" b
+(function() {
+
+  'use strict';
+
+  angular
+    .module('$1')
+    .directive('$3', $3);
+
+  $3.$inject = [];
+
+  function $3($4) {
+    return {
+      restrict: 'EA',
+      transclude: false,
+      controller: controller,
+      controllerAs: 'vm',
+      bindToController: true,
+      templateUrl: '',
+      scope: {$5}
+    };
+  }
+
+  function controller() {
+    var vm = this;
+
+    ///////////// Properties
+
+    ///////////// Methods
+
+    ///////////// Function Declarations
+  }
+
+})();
+endsnippet
+
+snippet cln "angular console.log" b
+$log.log('$1');$2
+endsnippet
+
+snippet cljn "angular console.log + JSON.stringify" b
+$log.log(JSON.stringify($1, null, 2));$2
 endsnippet
