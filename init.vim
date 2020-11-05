@@ -43,7 +43,6 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'sheerun/vim-polyglot'
 Plug 'wakatime/vim-wakatime'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'cohama/lexima.vim'
 Plug '907th/vim-auto-save'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -62,11 +61,6 @@ Plug 'noahfrederick/vim-laravel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
-"Golang Section
-
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
 
 "End Golang Section
 
