@@ -34,32 +34,33 @@ let g:polyglot_disabled = ['markdown']
 
 call plug#begin()
 
-Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'thaerkh/vim-indentguides'
-Plug 'sheerun/vim-polyglot'
-Plug 'wakatime/vim-wakatime'
-Plug 'flazz/vim-colorschemes'
+Plug '907th/vim-auto-save'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
-Plug '907th/vim-auto-save'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'StanAngeloff/php.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
-Plug 'npxbr/glow.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'edersonferreira/violenta-vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-commentary'
-Plug 'noahfrederick/vim-laravel'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'noahfrederick/vim-laravel'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
+Plug 'StanAngeloff/php.vim'
+Plug 'thaerkh/vim-indentguides'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'wakatime/vim-wakatime'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
