@@ -183,6 +183,11 @@ endfunction
 
 nnoremap <C-n> :call NumberToggle()<CR>
 
+nmap ha :Tabularize /=<CR>
+vmap ha :Tabularize /=<CR>
+nmap he :Tabularize /:\zs<CR>
+vmap he :Tabularize /:\zs<CR>
+
 " End My maps (binds)
 
 " Theme Section
