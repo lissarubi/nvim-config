@@ -23,49 +23,72 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-snippet php "php" b
-<?php
 
+snippet main "fun main" b
+fun main(${1}){
+	${2}
+}
 endsnippet
 
-snippet vendor "vendor" b
-require __DIR__ . '/vendor/autoload.php';
+snippet fun "fun" b
+fun ${1}(${2}): ${3} {
+	${4}
+}
+endsnippet
+
+snippet pfun "private fun" b
+private fun ${1}(${2}): ${3} {
+	${4}
+}
+endsnippet
+
+snippet class "class" b
+class ${1} {
+	${0}
+}
+endsnippet
+
+snippet cobj "cobj" b
+companion object {
+	${0}
+}
+endsnippet
+
+snippet obj "obj" b
+object ${1} {
+	${0}
+}
 endsnippet
 
 snippet if "if" b
-if (${1}){
-${2}
+if (${1}) {
+	${0}
+}
+endsnippet
+
+snippet ifelse "if else" b
+if (${1}) {
+	${2}
+} else {
+	${0}
+}
+endsnippet
+
+snippet when "when" b
+when(${1}){
+	${2} -> ${3}
+	else -> ${4}
 }
 endsnippet
 
 snippet for "for" b
 for (${1}){
-${2}
+	${2}
 }
 endsnippet
 
 snippet while "while" b
 while (${1}){
-${2}
-}
-endsnippet
-
-snippet function "function" b
-function ${1}(${2}){
-${3}
-}
-endsnippet
-
-snippet pbf "public function" b
-public function ${1}(${2})
-{
-${3}
-}
-endsnippet
-
-snippet prf "private function" b
-private function ${1}(${2})
-{
-${3}
+	${2}
 }
 endsnippet
