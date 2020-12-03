@@ -36,6 +36,7 @@ call plug#begin()
 
 Plug '907th/vim-auto-save'
 Plug 'airblade/vim-gitgutter'
+Plug 'udalov/kotlin-vim'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
@@ -101,7 +102,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-phpls']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-phpls', 'coc-cord']
 
 " End Coc Section
 
