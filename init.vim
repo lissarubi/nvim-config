@@ -1,30 +1,30 @@
-set noruler
-set hidden
-set inccommand=split
-set number
 set autoread
 set backspace=indent,eol,start
-set termguicolors
+set clipboard=unnamedplus
+set encoding=UTF-8
+set expandtab
+set hidden
+set inccommand=split
+set laststatus=0
 set mouse=a
 set nobackup
-set nowritebackup
-set noswapfile
-set encoding=UTF-8
-set ttyfast
-set tabstop=2
-set noshowmode
-set expandtab
-set laststatus=0
+set noruler
 set noshowcmd
+set noshowmode
+set noswapfile
+set nowritebackup
+set number
 set shiftwidth=2
-set clipboard=unnamedplus
 set t_Co=256
+set tabstop=2
+set termguicolors
+set ttyfast
 
-command WQ wq
-command Wq wq
-command W w
 command Q q
 command QW wq
+command W w
+command WQ wq
+command Wq wq
 
 " Vim Polyglt Section
 
@@ -35,8 +35,9 @@ let g:polyglot_disabled = ['markdown']
 call plug#begin()
 
 Plug '907th/vim-auto-save'
+Plug 'StanAngeloff/php.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'udalov/kotlin-vim'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
@@ -45,8 +46,8 @@ Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
 Plug 'godlygeek/tabular'
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'noahfrederick/vim-laravel'
 Plug 'preservim/nerdtree'
@@ -54,14 +55,13 @@ Plug 'preservim/tagbar'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'StanAngeloff/php.vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'udalov/kotlin-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -85,10 +85,10 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " Open.vim Section
 
+let g:open#audio = 'celluloid'
 let g:open#image = 'sxiv'
 let g:open#pdf = 'zathura'
 let g:open#video = 'celluloid'
-let g:open#audio = 'celluloid'
 
 "End Open.vim Section
 
@@ -200,30 +200,30 @@ color dalton
 " Prettier Section
 
 let g:auto_save_silent = 1
-let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#config#print_width = '80'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#tab_width = '2'
+let g:prettier#config#trailing_comma = 'all'
 let g:prettier#exec_cmd_path = "/home/ederson/.asdf/shims/prettier"
 let g:prettier#quickfix_auto_focus = 0
-let g:prettier#config#print_width = '80'
-let g:prettier#config#tab_width = '2'
-let g:prettier#autoformat = 0
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#quickfix_enabled = 0
 
 " End of Prettier Section
 
 " Vim Airline Section
 
-let g:airline_theme='dalton'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%3p%% %l:%c"
+let g:airline_theme='dalton'
 
 " End Vim Airline Section
 
