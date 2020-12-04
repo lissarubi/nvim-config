@@ -40,6 +40,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
+Plug 'edersonferreira/compile.vim'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/violenta-vim'
@@ -66,6 +67,12 @@ Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 "End Golang Section
+
+" Compile.vim Section
+
+let g:compile#compileKey = "<F7>"
+
+" End Compile.vim Section
 
 " Snippets Section
 
