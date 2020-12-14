@@ -40,7 +40,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
-Plug 'edersonferreira/compile.vim'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/violenta-vim'
@@ -109,7 +108,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-phpls', 'coc-cord']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-phpls', 'coc-cord', 'coc-go']
 
 " End Coc Section
 
@@ -157,16 +156,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-autocmd vimEnter *.cpp map <F7> :w <CR> :!g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi<CR>
-
-autocmd vimEnter *.js map <F7> :w <CR> :!node %<CR>
-
-autocmd vimEnter *.rb map <F7> :w <CR> :!ruby %<CR>
-
-autocmd vimEnter *.php map <F7> :w <CR> :!php %<CR>
-
-autocmd vimEnter *.sh map <F7> :w <CR> :!sh %<CR>
 
 inoremap <C-v> <ESC>"+pa<CR>
 vnoremap <C-c> "+y<CR>
