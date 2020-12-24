@@ -3,6 +3,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set encoding=UTF-8
 set expandtab
+set cursorline
 set hidden
 set inccommand=split
 set laststatus=0
