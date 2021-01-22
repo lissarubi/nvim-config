@@ -40,6 +40,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
+Plug 'voldikss/vim-floaterm'
 Plug 'justinmk/vim-sneak'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
@@ -62,7 +63,6 @@ Plug 'tpope/vim-commentary'
 Plug 'udalov/kotlin-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
@@ -145,6 +145,8 @@ let mapleader = "\<Space>"
 
 nnoremap q: <nop>
 
+nnoremap <F9> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 ranger<CR>
+nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
 nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <C-w> :w!<CR>
@@ -233,13 +235,6 @@ set splitbelow
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-" open terminal on ctrl+n
-function! OpenTerminal()
-  split term://zsh
-  resize 10
-endfunction
-nnoremap <C-l> :call OpenTerminal()<CR>
-
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
