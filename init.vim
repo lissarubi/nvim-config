@@ -40,13 +40,13 @@ Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -66,7 +66,14 @@ Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
-"End Golang Section
+" Vim Sneak Section
+
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
+" End Vim Sneak Section
 
 " Compile.vim Section
 
@@ -180,11 +187,6 @@ function! NumberToggle()
 endfunction
 
 nnoremap <C-n> :call NumberToggle()<CR>
-
-nmap ha :Tabularize /=<CR>
-vmap ha :Tabularize /=<CR>
-nmap he :Tabularize /:\zs<CR>
-vmap he :Tabularize /:\zs<CR>
 
 " End My maps (binds)
 
