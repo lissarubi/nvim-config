@@ -146,7 +146,8 @@ let mapleader = "\<Space>"
 nnoremap q: <nop>
 
 nnoremap <F9> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 ranger<CR>
-nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
+nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
+nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
 nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <C-w> :w!<CR>
@@ -158,8 +159,6 @@ nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
 nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
-
-nnoremap <leader>m :Glow<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
