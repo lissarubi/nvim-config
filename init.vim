@@ -40,18 +40,18 @@ Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
-Plug 'voldikss/vim-floaterm'
-Plug 'justinmk/vim-sneak'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'noahfrederick/vim-laravel'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -63,6 +63,7 @@ Plug 'tpope/vim-commentary'
 Plug 'udalov/kotlin-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -74,12 +75,6 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 " End Vim Sneak Section
-
-" Compile.vim Section
-
-let g:compile#compileKey = "<F7>"
-
-" End Compile.vim Section
 
 " Snippets Section
 
@@ -120,10 +115,6 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 
 " End Coc Section
 
-" Snippets Section
-
-" End Snippets Section
-
 " Nerd Tree Section
 
 autocmd StdinReadPre * let s:std_in=1
@@ -137,43 +128,57 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
 " End Nerd Tree Section
 
 " My maps (binds)
 let mapleader = "\<Space>"
 
-nnoremap q: <nop>
+nnoremap Q <nop>
+inoremap <C-v> <ESC>"+pa<CR>
+inoremap <silent> <c-j> <ESC>:m +1<CR> i
+inoremap <silent> <c-k> <ESC>:m -2<CR> i
 
-nnoremap <F9> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 ranger<CR>
-nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
-nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
-nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
-nnoremap <F6> :TagbarToggle<CR>
-nnoremap <C-w> :w!<CR>
-nnoremap <C-q> :qa<CR>
-nnoremap db :bw<CR>
-nnoremap cr :CocRestart<CR><CR>
 nmap <Leader>e <Plug>(Prettier)
-nnoremap <C-S> :AutoSaveToggle<CR>
-nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
-nnoremap <F2> :bnext<CR>:echom '->'<CR>
-nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
-
-" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
 
-inoremap <C-v> <ESC>"+pa<CR>
+tnoremap <Esc> <C-\><C-n>
+
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+nnoremap <C-S> :AutoSaveToggle<CR>
+nnoremap <C-b> <cmd>Telescope buffers<cr>
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-q> :qa<CR>
+nnoremap <C-w> :w!<CR>
+
+nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
+nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
+nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
+nnoremap <F2> :bnext<CR>:echom '->'<CR>
+nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
+nnoremap <F6> :TagbarToggle<CR>
+nnoremap <F9> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 ranger<CR>
+
+nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent> <c-j> :m +1<CR>
+nnoremap <silent> <c-k> :m -2<CR>
+
+nnoremap cr :CocRestart<CR><CR>
+nnoremap db :bw<CR>
+
 vnoremap <C-c> "+y<CR>
 vnoremap <C-d> "+d<CR>
 
-nnoremap <silent> <c-j> :m +1<CR>
-nnoremap <silent> <c-k> :m -2<CR>
-inoremap <silent> <c-j> <ESC>:m +1<CR> i
-inoremap <silent> <c-k> <ESC>:m -2<CR> i
 vnoremap <silent> <c-j> :m +1<CR>
 vnoremap <silent> <c-k> :m -2<CR>
 
@@ -231,25 +236,7 @@ let g:airline_theme='dalton'
 set splitright
 set splitbelow
 " turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
-
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
-      \}
-
+"
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
