@@ -1,5 +1,4 @@
 set autoread
-set paste
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set encoding=UTF-8
