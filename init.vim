@@ -1,9 +1,9 @@
 set autoread
 set backspace=indent,eol,start
 set clipboard=unnamedplus
+set cursorline
 set encoding=UTF-8
 set expandtab
-set cursorline
 set hidden
 set inccommand=split
 set laststatus=0
@@ -15,6 +15,7 @@ set noshowmode
 set noswapfile
 set nowritebackup
 set number
+set scrolloff=999
 set shiftwidth=2
 set t_Co=256
 set tabstop=2
