@@ -160,6 +160,7 @@ nnoremap <C-b> <cmd>Telescope buffers<cr>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
+nnoremap <C-a> ggVG=<C-o>
 
 nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
 nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
