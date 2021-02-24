@@ -34,17 +34,9 @@ Autocomplete `[`, `{`, ` ` `, `'` and `"`.
 
 Automaticly save the current buffer if you go to normal mode.
 
-## Vim Prettier
-
-Prettier files inside Vim.
-
 ## Vim Nerdtree Syntax Highlight
 
 Highlight filestypes in NERDTree.
-
-## php.vim
-
-Better support to PHP for Vim.
 
 ## Nerdtree Git Plugin
 
@@ -86,10 +78,6 @@ Comment lines in a easy way.
 ## sleuth.vim
 
 Automaticly understand the size of indentation.
-
-## Vim Laravel
-
-Laravel better support for Vim.
 
 ## coc.nvim
 
