@@ -37,19 +37,16 @@ let g:polyglot_disabled = ['markdown']
 call plug#begin()
 
 Plug '907th/vim-auto-save'
-Plug 'StanAngeloff/php.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
-Plug 'edersonferreira/open.vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
 Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'noahfrederick/vim-laravel'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -60,7 +57,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
-Plug 'udalov/kotlin-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'voldikss/vim-floaterm'
@@ -91,15 +87,6 @@ imap <C-a> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " End Snippets Section
-
-" Open.vim Section
-
-let g:open#audio = 'celluloid'
-let g:open#image = 'sxiv'
-let g:open#pdf = 'zathura'
-let g:open#video = 'celluloid'
-
-"End Open.vim Section
 
 " IndentGuides Section
 
