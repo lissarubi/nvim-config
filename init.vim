@@ -127,7 +127,6 @@ inoremap <silent> <c-k> <ESC>:m -2<CR> i
 
 nmap <Leader>e <Plug>(Prettier)
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 

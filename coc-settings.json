@@ -3,6 +3,7 @@
     "vue-html": "html",
     "markdown": "html",
     "blade": "html",
+    "html.twig": "html",
     "javascript": "javascriptreact"
   },
   "emmet.excludeLanguages": [],
