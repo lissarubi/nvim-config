@@ -45,11 +45,9 @@ Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
-Plug 'justinmk/vim-sneak'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
@@ -62,15 +60,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'voldikss/vim-floaterm'
 
 call plug#end()
-
-" Vim Sneak Section
-
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-
-" End Vim Sneak Section
 
 " Snippets Section
 
@@ -98,7 +87,7 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-yank', 'coc-phpls', 'coc-cord', 'coc-go']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-phpls', 'coc-cord', 'coc-go']
 
 " End Coc Section
 
@@ -142,8 +131,9 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 nnoremap <C-S> :AutoSaveToggle<CR>
-nnoremap <C-b> <cmd>Telescope buffers<cr>
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-p> :GFiles .<CR>
+nnoremap <C-l> :Lines<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-a> ggVG=<C-o>
@@ -188,24 +178,6 @@ nnoremap <C-n> :call NumberToggle()<CR>
 color dalton
 
 " End Theme Section
-
-" Prettier Section
-
-let g:auto_save_silent = 1
-let g:prettier#autoformat = 0
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'true'
-let g:prettier#config#print_width = '80'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#tab_width = '2'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#exec_cmd_path = "/home/ederson/.asdf/shims/prettier"
-let g:prettier#quickfix_auto_focus = 0
-let g:prettier#quickfix_enabled = 0
-
-" End of Prettier Section
 
 " Vim Airline Section
 
