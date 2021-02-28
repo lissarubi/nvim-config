@@ -132,7 +132,7 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-b> :Buffers<CR>
-nnoremap <C-p> :GFiles .<CR>
+nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Lines<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
