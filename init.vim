@@ -96,7 +96,9 @@ let mapleader = "\<Space>"
 
 " void register maps section
 
+
 vnoremap <Leader>d "_d
+vnoremap <Leader>p "_dP
 nnoremap <Leader>dd "_dd
 nnoremap <Leader>dj "_dj
 nnoremap <Leader>dk "_dk
