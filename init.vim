@@ -94,6 +94,27 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 " My maps (binds)
 let mapleader = "\<Space>"
 
+" void register maps section
+
+vnoremap <Leader>d "_d
+nnoremap <Leader>dd "_dd
+nnoremap <Leader>dj "_dj
+nnoremap <Leader>dk "_dk
+nnoremap <Leader>di{ "_di{
+nnoremap <Leader>di[ "_di[
+nnoremap <Leader>di( "_di(
+nnoremap <Leader>di" "_di"
+nnoremap <Leader>di' "_di'
+nnoremap <Leader>di` "_di`
+nnoremap <Leader>da{ "_da{
+nnoremap <Leader>da[ "_da[
+nnoremap <Leader>da( "_da(
+nnoremap <Leader>da" "_da"
+nnoremap <Leader>da' "_da'
+nnoremap <Leader>da` "_da`
+
+" void register maps section end
+
 nnoremap Q <nop>
 inoremap <C-v> <ESC>"+pa<CR>
 inoremap <silent> <c-j> <ESC>:m +1<CR> i
@@ -143,6 +164,7 @@ vnoremap <C-d> "+d<CR>
 
 vnoremap <silent> <c-j> :m +1<CR>
 vnoremap <silent> <c-k> :m -2<CR>
+
 
 function! NumberToggle()
     if(&nu == 1)
