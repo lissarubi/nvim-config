@@ -61,22 +61,6 @@ Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
-" Snippets Section
-
-imap <C-x> <Plug>(coc-snippets-expand)
-
-vmap <C-a> <Plug>(coc-snippets-select)
-
-let g:coc_snippet_next = 'c-a'
-
-let g:coc_snippet_prev = '<F9>'
-
-imap <C-a> <Plug>(coc-snippets-expand-jump)
-
-xmap <leader>x  <Plug>(coc-convert-snippet)
-
-" End Snippets Section
-
 " IndentGuides Section
 
 let g:indentguides_ignorelist = ['markdown', 'go']
@@ -144,7 +128,8 @@ nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Lines<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
-nnoremap <C-a> ggVG=<C-o>
+nnoremap <C-x> ggVG=<C-o>
+nnoremap <silent> <C-c> :!prettier % --write<CR><CR>
 
 nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
 nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
@@ -169,13 +154,13 @@ vnoremap <silent> <c-k> :m -2<CR>
 
 
 function! NumberToggle()
-    if(&nu == 1)
-        set nu!
-        set rnu
-    else
-        set nornu
-        set nu
-    endif
+  if(&nu == 1)
+    set nu!
+    set rnu
+  else
+    set nornu
+    set nu
+  endif
 endfunction
 
 nnoremap <C-n> :call NumberToggle()<CR>
