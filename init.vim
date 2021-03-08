@@ -6,6 +6,7 @@ set encoding=UTF-8
 set expandtab
 set hidden
 set inccommand=split
+set incsearch
 set laststatus=0
 set mouse=a
 set nobackup
@@ -17,10 +18,13 @@ set nowritebackup
 set number
 set scrolloff=999
 set shiftwidth=2
+set smartcase
+set smartindent
 set t_Co=256
 set tabstop=2
 set termguicolors
 set ttyfast
+set undodir=/tmp
 
 command Q q
 command QW wq
@@ -45,19 +49,20 @@ Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'szw/vim-maximizer'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -105,6 +110,7 @@ nnoremap <Leader>da` "_da`
 " void register maps section end
 
 nnoremap Q <nop>
+nnoremap gs :G<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 inoremap <silent> <c-j> <ESC>:m +1<CR> i
 inoremap <silent> <c-k> <ESC>:m -2<CR> i
@@ -127,6 +133,7 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-b> :Buffers<CR>
+nnoremap <C-f> :MaximizerToggle<CR>
 nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Lines<CR>
 nnoremap <C-q> :qa<CR>
@@ -134,13 +141,11 @@ nnoremap <C-w> :w!<CR>
 nnoremap <C-x> ggVG=<C-o>
 nnoremap <silent> <C-c> :!prettier % --write<CR><CR>
 
-nnoremap <F10> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 htop<CR>
-nnoremap <F11> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2<CR>
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
 nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <F6> :TagbarToggle<CR>
-nnoremap <F9> :FloatermNew --height=0.9 --width=0.9 --wintype=float --autoclose=2 ranger<CR>
+nnoremap <F10> :split term://zsh<CR>i
 
 nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent> <c-j> :m +1<CR>
