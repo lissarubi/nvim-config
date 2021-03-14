@@ -109,6 +109,8 @@ nnoremap <Leader>da` "_da`
 
 " void register maps section end
 
+nnoremap <CR> o<ESC>
+
 nnoremap Q <nop>
 nnoremap gs :G<CR>
 inoremap <C-v> <ESC>"+pa<CR>
@@ -139,7 +141,7 @@ nnoremap <C-l> :Lines<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-x> ggVG=<C-o>
-nnoremap <silent> <C-c> :!prettier % --write<CR><CR>
+nnoremap <silent> <Leader> e :!prettier % --write<CR><CR>
 
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
