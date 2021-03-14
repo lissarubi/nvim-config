@@ -26,12 +26,6 @@ set termguicolors
 set ttyfast
 set undodir=/tmp
 
-command Q q
-command QW wq
-command W w
-command WQ wq
-command Wq wq
-
 " Vim Polyglt Section
 
 let g:polyglot_disabled = ['markdown']
