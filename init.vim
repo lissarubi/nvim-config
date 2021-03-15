@@ -39,6 +39,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
+Plug 'mhinz/vim-startify'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
@@ -70,18 +71,39 @@ let g:indentguides_tabchar = '▏'
 
 " Coc Section
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-phpls', 'coc-cord', 'coc-go']
-
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-phpls', 'coc-cord', 'coc-go']
 
 " End Coc Section
+
+" vim-startify Section
+
+function! s:gitModified()
+  let files = systemlist('git ls-files -m 2>/dev/null')
+  return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+" same as above, but show untracked files, honouring .gitignore
+function! s:gitUntracked()
+  let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+  return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': function('s:gitModified'),  'header': ['   git modified']},
+      \ { 'type': function('s:gitUntracked'), 'header': ['   git untracked']},
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
+
+" End vim-startify Section
 
 " My maps (binds)
 let mapleader = "\<Space>"
 
 " void register maps section
-
 
 vnoremap <Leader>d "_d
 vnoremap <Leader>p "_dP
