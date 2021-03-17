@@ -2,10 +2,10 @@ call plug#begin()
 
 Plug '907th/vim-auto-save'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'glepnir/dashboard-nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
-Plug 'mhinz/vim-startify'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'

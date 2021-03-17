@@ -49,8 +49,9 @@ nnoremap <A-l> <C-w>l
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :MaximizerToggle<CR>
+inoremap <C-f> <ESC>:MaximizerToggle<CR>i
 nnoremap <C-p> :Files .<CR>
-nnoremap <C-l> :Lines<CR>
+nnoremap <C-l> :Fg .<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-x> ggVG=<C-o>
@@ -65,6 +66,15 @@ nnoremap <F10> :split term://zsh<CR>i
 nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent> <c-j> :m +1<CR>
 nnoremap <silent> <c-k> :m -2<CR>
+
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>fc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fw :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fm :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>fn :DashboardNewFile<CR>
 
 nnoremap cr :CocRestart<CR><CR>
 nnoremap db :bw<CR>
