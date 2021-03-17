@@ -2,7 +2,6 @@ call plug#begin()
 
 Plug '907th/vim-auto-save'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'glepnir/dashboard-nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
@@ -10,6 +9,7 @@ Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'gko/vim-coloresque'
+Plug 'glepnir/dashboard-nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -22,5 +22,6 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'wellle/targets.vim'
 
 call plug#end()
