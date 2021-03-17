@@ -51,7 +51,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :MaximizerToggle<CR>
 inoremap <C-f> <ESC>:MaximizerToggle<CR>i
 nnoremap <C-p> :Files .<CR>
-nnoremap <C-l> :Fg .<CR>
+nnoremap <C-l> :Rg .<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
 nnoremap <C-x> ggVG=<C-o>
