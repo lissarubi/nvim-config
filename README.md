@@ -30,11 +30,11 @@
 
   Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support 
 
-## vim-startify
+## dashboard-nvim
 
-[vim-startify](https://github.com/mhinz/vim-startify)
+[dashboard-nvim](glepnir/dashboard-nvim)
 
-  The fancy start screen for Vim. 
+  vim dashboard 
 
 ## dalton-vim
 
