@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug '907th/vim-auto-save'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
@@ -8,7 +9,6 @@ Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
 Plug 'edersonferreira/violenta-vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'gko/vim-coloresque'
 Plug 'glepnir/dashboard-nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
