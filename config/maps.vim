@@ -48,8 +48,6 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-b> :Buffers<CR>
-nnoremap <C-f> :MaximizerToggle<CR>
-inoremap <C-f> <ESC>:MaximizerToggle<CR>i
 nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Rg .<CR>
 nnoremap <C-q> :qa<CR>
