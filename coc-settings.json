@@ -7,9 +7,7 @@
     "javascript": "javascriptreact"
   },
   "emmet.excludeLanguages": [],
-  "yank.highlight.duration": 0,
-  "yank.list.maxsize": 20,
-  "yank.enableCompletion": false,
+  "diagnostic.displayByAle": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
