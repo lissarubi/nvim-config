@@ -2,23 +2,30 @@ let mapleader = "\<Space>"
 
 " void register maps section
 
-vnoremap <Leader>d "_d
-vnoremap <Leader>p "_dP
-nnoremap <Leader>dd "_dd
-nnoremap <Leader>dj "_dj
-nnoremap <Leader>dk "_dk
-nnoremap <Leader>di{ "_di{
-nnoremap <Leader>di[ "_di[
-nnoremap <Leader>di( "_di(
-nnoremap <Leader>di" "_di"
-nnoremap <Leader>di' "_di'
-nnoremap <Leader>di` "_di`
-nnoremap <Leader>da{ "_da{
-nnoremap <Leader>da[ "_da[
-nnoremap <Leader>da( "_da(
+nnoremap <Leader>D "_D
 nnoremap <Leader>da" "_da"
 nnoremap <Leader>da' "_da'
+nnoremap <Leader>da( "_da(
+nnoremap <Leader>da[ "_da[
 nnoremap <Leader>da` "_da`
+nnoremap <Leader>da{ "_da{
+nnoremap <Leader>dd "_dd
+nnoremap <Leader>di" "_di"
+nnoremap <Leader>di' "_di'
+nnoremap <Leader>di( "_di(
+nnoremap <Leader>di[ "_di[
+nnoremap <Leader>di` "_di`
+nnoremap <Leader>di{ "_di{
+nnoremap <Leader>dj "_dj
+nnoremap <Leader>dk "_dk
+nnoremap <Leader>dt" "_dt"
+nnoremap <Leader>dt' "_dt'
+nnoremap <Leader>dt( "_dt(
+nnoremap <Leader>dt[ "_dt[
+nnoremap <Leader>dt` "_dt`
+nnoremap <Leader>dt{ "_dt{
+vnoremap <Leader>d "_d
+vnoremap <Leader>p "_dP
 
 " void register maps section end
 
@@ -64,15 +71,6 @@ nnoremap <F10> :split term://zsh<CR>i
 nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent> <c-j> :m +1<CR>
 nnoremap <silent> <c-k> :m -2<CR>
-
-nmap <Leader>ss :<C-u>SessionSave<CR>
-nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
-nnoremap <silent> <Leader>fc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fw :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fm :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>fn :DashboardNewFile<CR>
 
 nnoremap cr :CocRestart<CR><CR>
 nnoremap db :bw<CR>
