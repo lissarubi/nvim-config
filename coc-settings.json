@@ -7,7 +7,8 @@
     "javascript": "javascriptreact"
   },
   "emmet.excludeLanguages": [],
-  "diagnostic.displayByAle": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "languageserver": {
     "ccls": {
       "command": "ccls",
