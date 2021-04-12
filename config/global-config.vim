@@ -20,14 +20,14 @@ set scrolloff=999
 set shiftwidth=2
 set smartcase
 set smartindent
+set splitbelow
+set splitright
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
 set t_Co=256
 set tabstop=2
 set termguicolors
 set ttyfast
 set undodir=/tmp
-set splitright
-set splitbelow
-set statusline+=%=
-set statusline+=\ %{LinterStatus()}
 
 color dalton

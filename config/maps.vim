@@ -1,35 +1,6 @@
 let mapleader = "\<Space>"
 
-" void register maps section
-
-nnoremap <Leader>D "_D
-nnoremap <Leader>da" "_da"
-nnoremap <Leader>da' "_da'
-nnoremap <Leader>da( "_da(
-nnoremap <Leader>da[ "_da[
-nnoremap <Leader>da` "_da`
-nnoremap <Leader>da{ "_da{
-nnoremap <Leader>dd "_dd
-nnoremap <Leader>di" "_di"
-nnoremap <Leader>di' "_di'
-nnoremap <Leader>di( "_di(
-nnoremap <Leader>di[ "_di[
-nnoremap <Leader>di` "_di`
-nnoremap <Leader>di{ "_di{
-nnoremap <Leader>dj "_dj
-nnoremap <Leader>dk "_dk
-nnoremap <Leader>dt" "_dt"
-nnoremap <Leader>dt' "_dt'
-nnoremap <Leader>dt( "_dt(
-nnoremap <Leader>dt[ "_dt[
-nnoremap <Leader>dt` "_dt`
-nnoremap <Leader>dt{ "_dt{
-vnoremap <Leader>d "_d
-vnoremap <Leader>p "_dP
-
-" void register maps section end
-
-nnoremap <CR> o<ESC>
+nnoremap <CR> j0
 
 nnoremap Q <nop>
 nnoremap gs :G<CR>
@@ -93,3 +64,54 @@ function! NumberToggle()
 endfunction
 
 nnoremap <C-n> :call NumberToggle()<CR>
+
+" void register maps section
+
+nnoremap <Leader>D "_D
+nnoremap <Leader>da" "_da"
+nnoremap <Leader>da' "_da'
+nnoremap <Leader>da( "_da(
+nnoremap <Leader>da[ "_da[
+nnoremap <Leader>da` "_da`
+nnoremap <Leader>da{ "_da{
+nnoremap <Leader>dd "_dd
+nnoremap <Leader>di" "_di"
+nnoremap <Leader>di' "_di'
+nnoremap <Leader>di( "_di(
+nnoremap <Leader>di[ "_di[
+nnoremap <Leader>di` "_di`
+nnoremap <Leader>di{ "_di{
+nnoremap <Leader>dj "_dj
+nnoremap <Leader>dk "_dk
+nnoremap <Leader>dt" "_dt"
+nnoremap <Leader>dt' "_dt'
+nnoremap <Leader>dt( "_dt(
+nnoremap <Leader>dt[ "_dt[
+nnoremap <Leader>dt` "_dt`
+nnoremap <Leader>dt{ "_dt{
+vnoremap <Leader>d "_d
+vnoremap <Leader>p "_dP
+
+nnoremap <Leader>ca" "_ca"
+nnoremap <Leader>ca' "_ca'
+nnoremap <Leader>ca( "_ca(
+nnoremap <Leader>ca[ "_ca[
+nnoremap <Leader>ca` "_ca`
+nnoremap <Leader>ca{ "_ca{
+nnoremap <Leader>cc "_cc
+nnoremap <Leader>ci" "_ci"
+nnoremap <Leader>ci' "_ci'
+nnoremap <Leader>ci( "_ci(
+nnoremap <Leader>ci[ "_ci[
+nnoremap <Leader>ci` "_ci`
+nnoremap <Leader>ci{ "_ci{
+nnoremap <Leader>cj "_cj
+nnoremap <Leader>ck "_ck
+nnoremap <Leader>ct" "_ct"
+nnoremap <Leader>ct' "_ct'
+nnoremap <Leader>ct( "_ct(
+nnoremap <Leader>ct[ "_ct[
+nnoremap <Leader>ct` "_ct`
+nnoremap <Leader>ct{ "_ct{
+
+" void register maps section end
