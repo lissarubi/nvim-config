@@ -113,5 +113,16 @@ nnoremap <Leader>ct( "_ct(
 nnoremap <Leader>ct[ "_ct[
 nnoremap <Leader>ct` "_ct`
 nnoremap <Leader>ct{ "_ct{
+nnoremap <Leader>cw "_cw
+nnoremap <Leader>cW "_cW
+nnoremap <Leader>cb "_cb
+nnoremap <Leader>cB "_cB
+nnoremap <Leader>cB "_cB
+nnoremap <Leader>ch "_ch
+nnoremap <Leader>cj "_cj
+nnoremap <Leader>ck "_ck
+nnoremap <Leader>cl "_cl
+nnoremap <Leader>c[ "_c[
+nnoremap <Leader>c{ "_c{
 
 " void register maps section end
