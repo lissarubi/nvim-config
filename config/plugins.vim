@@ -21,7 +21,6 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
-Plug 'wellle/targets.vim'
 
 Plug 'edersonferreira/violenta-vim'
 Plug 'rafi/awesome-vim-colorschemes'
