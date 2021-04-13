@@ -1,5 +1,4 @@
 call plug#begin()
-
 Plug '907th/vim-auto-save'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -18,12 +17,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thaerkh/vim-indentguides'
+Plug 'thaerkh/vim-workspace'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 
-Plug 'edersonferreira/violenta-vim'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'acaverna/caverna-vim-theme'
+" Plug 'edersonferreira/violenta-vim'
+" Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'acaverna/caverna-vim-theme'
 
 call plug#end()
