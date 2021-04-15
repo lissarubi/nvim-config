@@ -31,7 +31,7 @@ nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Rg .<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
-nnoremap <C-x> ggVG=<C-o>
+nnoremap <Leader>x ggVG=<C-o>
 nnoremap <silent> <Leader>e :!prettier % --write<CR><CR>
 
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
@@ -64,11 +64,45 @@ function! NumberToggle()
   endif
 endfunction
 
-nnoremap <C-n> :call NumberToggle()<CR>
+nnoremap <Leader>n :call NumberToggle()<CR>
 
 " void register maps section
 
+
 nnoremap <Leader>D "_D
+nnoremap <Leader>cB "_cB
+nnoremap <Leader>cB "_cB
+nnoremap <Leader>cW "_cW
+nnoremap <Leader>c[ "_c[
+nnoremap <Leader>ca" "_ca"
+nnoremap <Leader>ca' "_ca'
+nnoremap <Leader>ca( "_ca(
+nnoremap <Leader>ca[ "_ca[
+nnoremap <Leader>ca` "_ca`
+nnoremap <Leader>ca{ "_ca{
+nnoremap <Leader>cb "_cb
+nnoremap <Leader>cc "_cc
+nnoremap <Leader>ch "_ch
+nnoremap <Leader>ci" "_ci"
+nnoremap <Leader>ci' "_ci'
+nnoremap <Leader>ci( "_ci(
+nnoremap <Leader>ci[ "_ci[
+nnoremap <Leader>ci` "_ci`
+nnoremap <Leader>ci{ "_ci{
+nnoremap <Leader>cj "_cj
+nnoremap <Leader>cj "_cj
+nnoremap <Leader>ck "_ck
+nnoremap <Leader>ck "_ck
+nnoremap <Leader>cl "_cl
+nnoremap <Leader>ct" "_ct"
+nnoremap <Leader>ct' "_ct'
+nnoremap <Leader>ct( "_ct(
+nnoremap <Leader>ct[ "_ct[
+nnoremap <Leader>ct` "_ct`
+nnoremap <Leader>ct{ "_ct{
+nnoremap <Leader>cw "_cw
+nnoremap <Leader>c{ "_c{
+
 nnoremap <Leader>da" "_da"
 nnoremap <Leader>da' "_da'
 nnoremap <Leader>da( "_da(
@@ -90,40 +124,8 @@ nnoremap <Leader>dt( "_dt(
 nnoremap <Leader>dt[ "_dt[
 nnoremap <Leader>dt` "_dt`
 nnoremap <Leader>dt{ "_dt{
-vnoremap <Leader>d "_d
-vnoremap <Leader>p "_dP
 
-nnoremap <Leader>ca" "_ca"
-nnoremap <Leader>ca' "_ca'
-nnoremap <Leader>ca( "_ca(
-nnoremap <Leader>ca[ "_ca[
-nnoremap <Leader>ca` "_ca`
-nnoremap <Leader>ca{ "_ca{
-nnoremap <Leader>cc "_cc
-nnoremap <Leader>ci" "_ci"
-nnoremap <Leader>ci' "_ci'
-nnoremap <Leader>ci( "_ci(
-nnoremap <Leader>ci[ "_ci[
-nnoremap <Leader>ci` "_ci`
-nnoremap <Leader>ci{ "_ci{
-nnoremap <Leader>cj "_cj
-nnoremap <Leader>ck "_ck
-nnoremap <Leader>ct" "_ct"
-nnoremap <Leader>ct' "_ct'
-nnoremap <Leader>ct( "_ct(
-nnoremap <Leader>ct[ "_ct[
-nnoremap <Leader>ct` "_ct`
-nnoremap <Leader>ct{ "_ct{
-nnoremap <Leader>cw "_cw
-nnoremap <Leader>cW "_cW
-nnoremap <Leader>cb "_cb
-nnoremap <Leader>cB "_cB
-nnoremap <Leader>cB "_cB
-nnoremap <Leader>ch "_ch
-nnoremap <Leader>cj "_cj
-nnoremap <Leader>ck "_ck
-nnoremap <Leader>cl "_cl
-nnoremap <Leader>c[ "_c[
-nnoremap <Leader>c{ "_c{
+nnoremap <Leader>x "_x
+vnoremap <Leader>d "_d
 
 " void register maps section end
