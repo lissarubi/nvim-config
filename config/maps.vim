@@ -31,7 +31,7 @@ nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Rg .<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-w> :w!<CR>
-nnoremap <Leader>x ggVG=<C-o>
+nnoremap <C-y> ggVG=<C-o>
 nnoremap <silent> <Leader>e :!prettier % --write<CR><CR>
 
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
@@ -40,7 +40,6 @@ nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <F10> :split term://zsh<CR>i
 
-nnoremap <silent> <C-y>  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent> <c-j> :m +1<CR>
 nnoremap <silent> <c-k> :m -2<CR>
 
