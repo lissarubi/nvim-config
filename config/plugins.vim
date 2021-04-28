@@ -1,6 +1,5 @@
 call plug#begin()
 
-Plug '907th/vim-auto-save'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'

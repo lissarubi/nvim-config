@@ -25,7 +25,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-nnoremap <C-S> :AutoSaveToggle<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-p> :Files .<CR>
 nnoremap <C-l> :Rg .<CR>
