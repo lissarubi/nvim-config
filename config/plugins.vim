@@ -21,7 +21,6 @@ Plug 'thaerkh/vim-workspace'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tyru/caw.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'jaredgorski/SpaceCamp'
 
 " Plug 'edersonferreira/violenta-vim'
 " Plug 'rafi/awesome-vim-colorschemes'
