@@ -5,7 +5,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
-Plug 'joeytwiddle/sexy_scroller.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
