@@ -1,3 +1,5 @@
+filetype plugin indent on
+set autoindent
 set autoread
 set backspace=indent,eol,start
 set clipboard=unnamedplus
@@ -19,7 +21,6 @@ set number
 set scrolloff=999
 set shiftwidth=2
 set smartcase
-set smartindent
 set splitbelow
 set splitright
 set statusline+=%=
@@ -28,6 +29,5 @@ set t_Co=256
 set tabstop=2
 set termguicolors
 set ttyfast
-set undodir=/tmp
 
 color dalton
