@@ -1,7 +1,6 @@
 let mapleader = "\<Space>"
 
 nnoremap Q <nop>
-nnoremap gs :G<CR>
 inoremap <C-v> <ESC>"+pa<CR>
 inoremap <silent> <c-j> <ESC>:m +1<CR> i
 inoremap <silent> <c-k> <ESC>:m -2<CR> i
