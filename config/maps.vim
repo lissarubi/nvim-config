@@ -41,6 +41,9 @@ nnoremap <silent> <c-k> :m -2<CR>
 nnoremap cr :CocRestart<CR><CR>
 nnoremap db :bw<CR>
 
+nnoremap g< :SidewaysLeft<cr>
+nnoremap g> :SidewaysRight<cr>
+
 vnoremap <C-c> "+y<CR>
 vnoremap <C-d> "+d<CR>
 

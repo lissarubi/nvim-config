@@ -1,8 +1,8 @@
 call plug#begin()
 
+Plug 'AndrewRadev/sideways.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'gcmt/wildfire.vim'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
 Plug 'edersonferreira/dalton-vim'
