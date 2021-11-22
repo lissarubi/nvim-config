@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-snippets', 'coc-solargraph', 'coc-vetur', 'coc-phpls', 'coc-go']
+let g:coc_global_extensions = ['coc-css', 'coc-emmet', 'coc-go', 'coc-html', 'coc-json', 'coc-phpls', 'coc-snippets', 'coc-solargraph', 'coc-solargraph', 'coc-tsserver', 'coc-vetur']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

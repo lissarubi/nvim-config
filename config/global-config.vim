@@ -32,4 +32,4 @@ set ttyfast
 
 filetype plugin indent on
 
-color dalton
+color gruvbox
