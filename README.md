@@ -1,11 +1,5 @@
 # Plugins
 
-## nerdtree-git-plugin
-
-[nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-
-A plugin of NERDTree showing git status 
-
 ## vim-gitgutter
 
 [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
@@ -67,6 +61,8 @@ Nodejs extension host for vim & neovim, load extensions like VSCode and host lan
 [nerdtree](https://github.com/preservim/nerdtree)
 
 A tree explorer plugin for vim.
+
+
 
 ## tagbar
 
@@ -160,7 +156,7 @@ nnoremap <silent> <Leader>e :!prettier % --write<CR><CR>
 
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
-nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
+nnoremap <F5> <cmd>CHADopen<cr>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <F10> :split term://zsh<CR>i
 
@@ -190,7 +186,6 @@ endfunction
 nnoremap <Leader>n :call NumberToggle()<CR>
 
 " void register maps section
-
 
 nnoremap <Leader>D "_D
 nnoremap <Leader>cB "_cB
