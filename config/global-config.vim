@@ -15,7 +15,6 @@ set nobackup
 set noruler
 set noshowcmd
 set noshowmode
-set nowrap
 set noswapfile
 set number
 set scrolloff=999
