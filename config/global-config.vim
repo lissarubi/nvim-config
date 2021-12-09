@@ -15,10 +15,11 @@ set nobackup
 set noruler
 set noshowcmd
 set noshowmode
+set nowrap
 set noswapfile
-set nowritebackup
 set number
 set scrolloff=999
+set colorcolumn=80
 set shiftwidth=2
 set smartcase
 set splitbelow

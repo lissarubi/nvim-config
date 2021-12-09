@@ -1,7 +1,6 @@
 call plug#begin()
 
 Plug 'AndrewRadev/sideways.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'dense-analysis/ale'
@@ -10,7 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'preservim/tagbar'
 Plug 'rhysd/clever-f.vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -19,7 +18,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thaerkh/vim-indentguides'
 Plug 'thaerkh/vim-workspace'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tyru/caw.vim'
 Plug 'vim-airline/vim-airline'
 

@@ -31,7 +31,7 @@ nnoremap <silent> <Leader>e :!prettier % --write<CR><CR>
 
 nnoremap <F1> :bprevious<CR>:echom '<-'<CR>
 nnoremap <F2> :bnext<CR>:echom '->'<CR>
-nnoremap <F5> :NERDTreeToggle<CR>:echom ''<CR>
+nnoremap <F5> <cmd>CHADopen<cr>
 nnoremap <F6> :TagbarToggle<CR>
 nnoremap <F10> :split term://zsh<CR>i
 
@@ -64,7 +64,6 @@ endfunction
 nnoremap <Leader>n :call NumberToggle()<CR>
 
 " void register maps section
-
 
 nnoremap <Leader>D "_D
 nnoremap <Leader>cB "_cB
