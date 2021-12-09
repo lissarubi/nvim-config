@@ -4,13 +4,13 @@
 
 [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
-A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks. 
+A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.
 
 ## lexima.vim
 
 [lexima.vim](https://github.com/cohama/lexima.vim)
 
-Auto close parentheses and repeat by dot dot dot... 
+Auto close parentheses and repeat by dot dot dot...
 
 ## ale
 
@@ -22,27 +22,31 @@ Check syntax in Vim asynchronously and fix files, with Language Server Protocol 
 
 [dalton-vim](https://github.com/edersonferreira/dalton-vim)
 
-A minimalistic VIM theme. 
+A minimalistic VIM theme.
+
+## gruvbox
+
+[gruvbox](https://github.com/morhetz/gruvbox)
+
+Retro groove color scheme for Vim
 
 ## violenta-vim
 
 [violenta-vim](https://github.com/edersonferreira/violenta-vim)
 
-Violenta's vim theme 
+Violenta's vim theme
 
-## vim-colorschemes
+## caverna-vim-theme
 
-[vim-colorschemes](https://github.com/flazz/vim-colorschemes)
+[caverna-vim-theme](https://github.com/acaverna/caverna-vim-theme)
 
-one colorscheme pack to rule them all!
+Caverna Theme for Vim
 
 ## vim-hexokinase
 
 [vim-hexokinase](https://github.com/RRethy/vim-hexokinase)
 
-
- hexokinase.vim - (Neo)Vim plugin for asynchronously displaying the colours in the file (#rrggbb, #rgb, rgb(a)? functions, hsl(a)? functions, web colours, custom patterns)
-Topics
+hexokinase.vim - (Neo)Vim plugin for asynchronously displaying the colours in the file (#rrggbb, #rgb, rgb(a)? functions, hsl(a)? functions, web colours, custom patterns)
 
 ## fzf.vim
 
@@ -54,21 +58,19 @@ fzf with vim
 
 [coc.nvim](https://github.com/neoclide/coc.nvim)
 
-Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers. 
+Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.
 
-## nerdtree
+## CHADtree
 
-[nerdtree](https://github.com/preservim/nerdtree)
+[CHADtree](https://github.com/ms-jpq/chadtree)
 
-A tree explorer plugin for vim.
-
-
+File manager for Neovim. Better than NERDTree.
 
 ## tagbar
 
 [tagbar](https://github.com/preservim/tagbar)
 
-Vim plugin that displays tags in a window, ordered by scope 
+Vim plugin that displays tags in a window, ordered by scope
 
 ## vim-devicons
 
@@ -80,19 +82,13 @@ Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite
 
 [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
-A solid language pack for Vim. 
+A solid language pack for Vim.
 
 ## vim-indentguides
 
 [vim-indentguides](https://github.com/thaerkh/vim-indentguides)
 
-Simple indentation guides for your buffers 
-
-## vim-nerdtree-syntax-highlight
-
-[vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
-
-Extra syntax and highlight for nerdtree files
+Simple indentation guides for your buffers
 
 ## caw.vim
 
@@ -106,15 +102,11 @@ Vim comment plugin: supported operator/non-operator mappings, repeatable by dot-
 
 lean & mean status/tabline for vim that's light as air
 
-# vim-multiple-cursors
-
-[vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-
-# clever-f.vim
+## clever-f.vim
 
 [clever-f.vim](https://github.com/rhysd/clever-f.vim)
 
-Extended f, F, t and T key mappings for Vim. 
+Extended f, F, t and T key mappings for Vim.
 
 # Maps
 
